@@ -11,6 +11,7 @@ services:
     environment:
       - PYTHONPATH=/app
       - FLASK_APP=.
+      - FLASK_ENV=development
     links:
     - db
     depends_on:

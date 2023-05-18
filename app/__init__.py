@@ -5,10 +5,11 @@ from flask_migrate import Migrate
 
 db = SQLAlchemy()
 migrate = Migrate()
+ma = Marshmallow()
 
 def create_app():
     app = Flask(__name__)
-    ma = Marshmallow(app)
+    ma.init_app(app)
 
     app.config['SECRET_KEY'] = 'secret-key-goes-here'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@db:5432/postgres'
